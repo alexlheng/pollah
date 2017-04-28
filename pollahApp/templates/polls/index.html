@@ -1,0 +1,15 @@
+{% if recent_questions %}
+    <ul>
+    {% for pollah_question in recent_questions %}
+        <li>
+	        <a href="/pollah/{{ pollah_question.id }}/">{{ pollah_question.question_text }}</a>
+	        <br>
+	        <a href="/pollah/{{ pollah_question.id }}/results/">Click here to see the results of this question.</a>
+	        <br>
+	        <a href="/pollah/{{ pollah_question.id }}/vote/">Click here to vote on this question.</a>
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
